@@ -58,7 +58,17 @@ body {
   text-align: center;
   padding: 2rem;
   position: relative;
+  z-index: 4;
 
+}
+.hero-section {
+  /* background-image: linear-gradient(
+    180deg,
+    hsl(355, 86%, 23%),
+    #e8adb7
+  );
+  /* filter: blur(150px); */
+ 
 }
 @keyframes rotate {
   0% {
@@ -76,7 +86,10 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  position: relative;
+  z-index: 99;
   gap: 30px;
+  border: 3px blue solid;
   span {
     font-family: var(--font-carattere);
 
@@ -86,10 +99,8 @@ body {
 
 .generic-button {
   border: 3px azure solid;
-  position: relative;
   transition: all;
 
-  z-index: 9999;
    width: 150px;
    border-radius: 15px;
     padding: 0.5rem;
@@ -103,9 +114,10 @@ body {
 }
 .scene-container {
   position: fixed;
-  z-index: 6;
   width: 100%;
   height: 100%;
+  z-index: 3;
+  pointer-events: none; /* 🔥 THIS IS THE KEY */
 }
 
 .content-container {
@@ -136,7 +148,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(

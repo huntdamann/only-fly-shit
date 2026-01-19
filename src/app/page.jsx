@@ -49,7 +49,7 @@ export default function Home() {
       </main>
 
       <section className="hero-section">
-      <div className="hero-bg" />
+        <div className="hero-bg" />
        <h1> Moment Of Love</h1>
 
         <div className="hero-cta">
