@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.enter-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181, 30, 30);
+    z-index: 9999;
+    position: fixed;
+}
+.hero-section h1 {
+
+  position: absolute;
+  top: 35%;
+  z-index: 5;
+  font-size: 10em;
+  color: hsla(180, 100%, 97%, 0.6);
+  filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.about-product {
+
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  border: none;
+  background-color: hsla(36, 58%, 57%, 0.5);
+
+}
+.about-product h2 {
+  font-size: 2em;
+}
+
+.section-1, .section-2, .hero-section {
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hero-cta {
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 30px;
+  span {
+    font-family: var(--font-carattere);
+
+  }
+  
+}
+
+.generic-button {
+  border: 3px azure solid;
+  position: relative;
+  transition: all;
+
+  z-index: 9999;
+    width: 150px;
+    border-radius: 15px;
+    padding: 0.5rem;
+    background-color:  hsla(355, 67%, 75%, 0.8) ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  
+}
+.generic-button:hover {
+  background-color:  hsla(248, 13%, 65%, 0.8) ;
+  transition: all;
+}
+.scene-container {
+  position: fixed;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+}
+.button-custo {
+  width: 200px;
+}
+.two {
+  justify-content: end;
+  flex-direction: row-reverse;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+  h2 {
+    font-size: 2em;
+    font-weight: 800;
+  }
+
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: linear-gradient(
+    180deg,
+    hsl(355, 86%, 23%),
+    #e8adb7
+  );
+  filter: blur(150px);
+  transform: scale(1.1); /* prevents edge clipping */
+}
+.basic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+    135deg,
+    hsl(350, 85%, 55%),
+    hsl(355, 64%, 32%)
+  );
+  filter: blur(150px);
+  transform: scale(1.1); /* prevents edge clipping */
 }
