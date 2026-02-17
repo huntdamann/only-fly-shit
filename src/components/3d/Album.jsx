@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('/glassalbum.glb')
+export default function ModelAlbum(props) {
+  const { nodes, materials } = useGLTF('/glassalbum_2.glb')
   return (
-    <group {...props} rotation={[-0.1,-1.5,0]} position={[0, -5, 0]} scale={[3.1, 3.1, 3.1]} dispose={null}>
+    <group position={[0, -0.5, 0]} rotation={[0, 4.5, -0.1]} scale={[0.5, 0.5, 0.5]} {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
@@ -21,16 +21,6 @@ export function Model(props) {
         material={materials['Material.001']}
         position={[-0.049, 2.093, 0.082]}
         rotation={[0, 0, -1.361]}
-        scale={[0.257, 0.158, 0.265]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.SongName.geometry}
-        material={materials['Material.003']}
-        position={[0.07, 1.681, 0.087]}
-        rotation={[0, 0, -1.361]}
-        scale={[0.184, 0.14, 0.43]}
       />
       <mesh
         castShadow
@@ -38,11 +28,17 @@ export function Model(props) {
         geometry={nodes.PlayTrack.geometry}
         material={materials['Material.002']}
         position={[0.07, 1.413, 0.087]}
-        rotation={[0, 0, -1.361]}
-        scale={[0.111, 0.131, 0.43]}
-      />
+        rotation={[0, 0, -1.361]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.SongName.geometry}
+          material={materials['Material.003']}
+          position={[-0.261, 0.056, 0]}
+        />
+      </mesh>
     </group>
   )
 }
 
-useGLTF.preload('/glassalbum.glb')
+useGLTF.preload('/glassalbum_2.glb')

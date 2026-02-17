@@ -1,0 +1,90 @@
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    background-color: #3f81cd;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .brand-name h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    font-family: var(--font-pacifico);
+  }
+  
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .menu-line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-button:hover .menu-line {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  /* Dropdown Navigation */
+.dropdown-nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* .nav-item:last-child {
+  border-bottom: none;
+} */
+
+.nav-item span {
+  display: block;
+  padding: 15px 20px;
+  color: #e8e5e5;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-orbitron);
+  transition: background-color 0.2s;
+}
+
+.nav-item span:hover {
+  background-color: #3f81cd;
+}
+
+/* Make sure header-wrapper has position relative */
+.header-wrapper {
+  position: relative;
+}

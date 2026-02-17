@@ -1,55 +1,75 @@
-"use client"
-import React from "react";
-import { FloatingDock } from "@/components/ui/floating-dock";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2,
-} from "@tabler/icons-react";
+import React, { useState } from 'react';
+import '../css/Header.css'
+import { Link, Element } from 'react-scroll';
 
-export function Header() {
-  const links = [
-    {
-      title: "Home",
-      icon: (
-        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
 
-    {
-      title: "Products",
-      icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    
-    
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    {
-      title: "Instagram",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Shop",
-      icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    
-  ];
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="flex items-center fixed z-[999] top-8 justify-center h-[5rem] w-full">
-      <FloatingDock
-        items={links} />
+    <header style={{backgroundColor: isMenuOpen ? "black" : "", transition: "all 0.3s ease"}} className="header-wrapper">
+      <div className="header-content">
+        {/* Brand Name */}
+        <div className="brand-name">
+          <h1>Only Fly Shit</h1>
+        </div>
+
+        {/* Menu Button */}
+        <button className="menu-button" onClick={toggleMenu}>
+          {/* Top line - rotates down to form top of X */}
+          <span style={{
+            transform: isMenuOpen ? "rotate(45deg) translateY(8px) translateX(5px)" : "rotate(0deg)",
+            transition: "transform 0.3s ease"
+          }} className="menu-line"/>
+
+          {/* Middle line - fades out */}
+          <span style={{
+            opacity: isMenuOpen ? "0" : "1",
+            transition: "opacity 0.3s ease"
+          }} className="menu-line"/>
+
+          {/* Bottom line - rotates up to form bottom of X */}
+          <span style={{
+            transform: isMenuOpen ? "rotate(-45deg) translateY(-8px) translateX(5px)" : "rotate(0deg)",
+            transition: "transform 0.3s ease"
+          }} className="menu-line"/>
+        </button>
+      </div>
+
+      {/* Dropdown Navigation */}
+      {isMenuOpen && (
+        <nav className="dropdown-nav">
+          <ul className="nav-list">
+            <li className="nav-item">
+            <Link to="section1" smooth={true} duration={500}>
+              <span>About The Brand</span>
+            </Link>
+
+            </li>
+
+            <li className="nav-item">
+            <Link to="section2" smooth={true} duration={500}>
+
+              <span>Hand-Crafted Candles</span>
+
+              </Link>
+
+            </li>
+            <li className="nav-item">
+            <Link to="section3" smooth={true} duration={500}>
+
+                <span>Glass Albums</span>
+              </Link>
+
+            </li>
+           
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

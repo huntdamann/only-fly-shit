@@ -18,48 +18,30 @@ export default function ProductInfo() {
 
     return (
         <>
-        <div className='flex border border-amber-300 w-full h-full'>
+        <div className='flex flex-col-reverse gap-12 items-center ' >
 
-            <div className='w-1/2 border flex flex-col items-center justify-evenly p-4'>
+            <div className='flex flex-col gap-4 items-center justify-center'>
 
-                <h2>Capture the moment...</h2>
+                <h2>About The Brand</h2>
 
                 <div className='p-4'>
-                    <ul className='flex flex-col gap-5'>
-                        <li className='flex gap-8'>
-                        
-                         <Image src="/heart.svg" width={30} height={100} alt='Heart Symbol' />
-                         <span className=' w-[400px]'>
-                         Customize each glass album with names, dates, and a meaningful phrase tied to the song that defines your special moment.
-                         </span>
-                        </li>
-                        <li className='flex gap-8'>
-                        
-                         <Image src="/heart.svg" width={30} height={100} alt='Heart Symbol' />
-                         <span className=' w-[400px]'>
-                         Choose from Spotify, Apple, or SoundCloud-inspired designs—each with unique layouts and detailing that reflect the platform’s aesthetic.                         </span>
-                        </li>
-                        <li className='flex gap-8'>
-                        
-                        <Image src="/heart.svg" width={30} height={100} alt='Heart Symbol' />
-                        <span className=' w-[400px]'>
-                        Scan the engraved code to instantly play your song anytime, anywhere.
-                        </span>
-                        </li>
-                        
-                        
-                    </ul>
+                 
+                    <div className='border flex flex-col items-center justify-center text-center'> 
+                        <p className='text-white'>Only Fly Shit was built on one belief: create value, no matter the circumstance.
+After being let go and facing everyday frustrations of feeling stuck, founder Hunter Mann made a decision — instead of waiting for the next opportunity, he would create it. By focusing on elevating himself through creating and providing value to others, he turned adversity into direction.
+Only Fly Shit represents that mindset. It’s about creating . Elevating above your situation. And a drive to progress forward.</p>
+                    </div>
+
 
                 </div>
-                <PriceSelector />
+                {/* <PriceSelector /> */}
                 
-                <button className='border-2 p-2 rounded-sm w-[150px] border-red-400'>Get Now</button>
 
             </div>
 
-            <div className='w-1/2 flex items-center justify-center'>
+            <div className=''>
+                <Image src='/logo.PNG' width={300} height={300} alt='Only Fly Shit Alternative Logo' />
 
-                <span>Image goes Here </span>
                
             </div>
 

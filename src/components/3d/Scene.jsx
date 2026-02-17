@@ -1,96 +1,59 @@
 "use client"
-import { useState } from 'react'
-import { useSpring, animated } from '@react-spring/three'
+import { useState, useRef } from 'react'
+import { useSpring, animated, useScroll } from '@react-spring/three'
 import { MeshDistortMaterial, Text, useGLTF, Float, Environment, PerformanceMonitor } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Model} from './Album'
+import ModelAlbum  from './Album'
+import  ModelCandle  from './Candle'
+import { ModelCube } from './Cube'
+
+
+
 const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial)
 const SCENE_DELAY = 5000
-const MyScene = ({section, second}) => {
-  const [clicked, setClicked] = useState(false)
 
-  const springs = useSpring({
-    color: section ? '#569AFF' : '#ff6d6d',
-  })
-  const { position } = useSpring({
-    to: {
-      position: section ? [4, 0, 0] : second ? [-4, 0, 0] : [0, 0, 0],
-      delay: SCENE_DELAY,
 
-    },
-    config: {
-      mass: 10,
-      tension: 200,
-      friction: 100,
-    },
-  });
+const MyScene = ({activeSection}) => {
 
-  const handleClick = () => setClicked(s => !s)
+  const meshRef = useRef()
 
   return (
-    <>
     
-    <animated.mesh position={position} onClick={handleClick}>
-      <sphereGeometry args={[1.5, 64, 32]} />
-      <AnimatedMeshDistortMaterial
-        speed={5}
-        distort={0.5}
-        color={springs.color}
-      />
-    </animated.mesh>
+ 
+    <>
+      {activeSection === 'two' && <ModelAlbum />}
+      {activeSection === 'one' && <ModelCandle />}
+      {activeSection === 'three' && <ModelCube/>}
+
+      
     </>
+
   )
 }
-const Box = () => {
-    const { position } = useSpring({
-      from: {
-        position: [-5, 0, 0],
-        delay: SCENE_DELAY,
-      },
-      to: {
-        position: [5, 0, 0],
-        delay: SCENE_DELAY,
-
-      },
-      loop: { reverse: true },
-      config: {
-        mass: 10,
-        tension: 200,
-        friction: 100,
-      },
-    });
-  
-    return (
-      <animated.group position={position}>
-        <mesh>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </animated.group>
-    );
-}
 
 
 
-export default function Scene({sectionOneActive , sectionTwoActive}) {
+
+export default function Scene({ active }) {
   return (
-    <Canvas>
+    <Canvas camera={{ position: [0, 0, 5], fov: 20 }} >
       <ambientLight intensity={1.8} />
       <pointLight intensity={5} position={[0, 6, 0]} />
       
-<PerformanceMonitor
+    {/* <PerformanceMonitor
         // Optional: Callback when performance improves (e.g., to increase detail)
         onIncline={() => console.log('Performance improved, maybe increase quality!')}
         // Optional: Callback when performance drops (e.g., to decrease detail)
         onDecline={() => console.log('Performance dropped, maybe lower quality!')}
       />
+       */}
       
       <Float>
+          <MyScene activeSection={active} />
 
-       <Model section={sectionOneActive} second={sectionTwoActive} />
-       </Float>
+      </Float>
        
-
+       
        <Environment preset="city" />
 
 

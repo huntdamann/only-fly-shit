@@ -6,8 +6,8 @@ import { motion } from "motion/react";
 export default function PriceSelector() {
   const sizes = [
     { label: '8x10"', price: "$10" },
-    { label: "Medium", price: "$15" },
-    { label: "Large", price: "$20" },
+    { label: "11x14", price: "$15" },
+    { label: "16x20", price: "$20" },
   ];
 
   const [selected, setSelected] = useState(0); // default selected index

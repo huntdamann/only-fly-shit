@@ -7,7 +7,10 @@
 }
 body {
   position: relative;
+  background-color: black;
 }
+
+
 
 .enter-screen {
     position: fixed;
@@ -23,10 +26,12 @@ body {
 .hero-section h1 {
 
   position: absolute;
-  top: 35%;
+  top: 20%;
   z-index: 5;
-  font-size: 10em;
-  color: hsla(355, 67%, 75%, 0.8) ;
+  font-size: 12em;
+  width: 150px;
+  font-family: var(--font-pacifico);
+  color: #3f81cd ;
   filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
 
 
@@ -34,7 +39,7 @@ body {
 
 .about-product {
 
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -42,14 +47,22 @@ body {
   padding: 2rem;
   position: relative;
   border: none;
-  background-color: hsla(36, 58%, 57%, 0.5);
+  
+  background-color: black;
+  p {
+    font-family: var(--font-orbitron);
+  }
 
 }
 .about-product h2 {
   font-size: 2em;
+  font-family: var(--font-audiowide);
+  width: 310px;
+  color: #3f81cd;
+  text-align: center;
 }
 
-.section-1, .section-2, .hero-section {
+.section-1, .section-2, .section-3, .hero-section {
   height: 100dvh;
   width: 100vw;
   display: flex;
@@ -58,9 +71,12 @@ body {
   text-align: center;
   padding: 2rem;
   position: relative;
-  z-index: 4;
+  background-color: black;
+  margin-top: 3rem;
 
 }
+
+
 
 @keyframes rotate {
   0% {
@@ -79,23 +95,52 @@ body {
   align-items: center;
   padding: 1rem;
   position: relative;
+  bottom: 5rem;
   z-index: 99;
-  gap: 30px;
-  span {
-    font-family: var(--font-carattere);
+  gap: 50px;
 
+  li {
+    color: white;
+    font-family: var(--font-orbitron);
+    text-transform: uppercase;
+  }
+  ul {
+    display: flex;
+    gap: 15px;
   }
   
 }
+.header {
+  width: 50%;
+  top: 30px;
+  z-index: 10;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 10vh;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background-color: hsla(0, 2%, 49%, 0.5);
+}
+.header ul {
+  display: flex;
+  border: 3px blue solid;
+  justify-content: space-evenly;
+  width: 100%;
+}
 
 .generic-button {
-  border: 3px azure solid;
+  border: 3px #3f81cd solid;
   transition: all;
 
    width: 150px;
    border-radius: 15px;
     padding: 0.5rem;
-    background-color:  hsla(355, 67%, 75%, 0.8) ;
+    font-family: var(--font-orbitron);
+    color: white;
+    background-color:  hsla(340, 10%, 6%, 0.8) ;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   
 }
@@ -107,14 +152,18 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 3;
-  pointer-events: none; /* 🔥 THIS IS THE KEY */
+  z-index: 2; /* Changed from -1 */
+  pointer-events: none;
 }
 
 .content-container {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;  
   
 }
 .button-custo {
@@ -127,12 +176,32 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
+  position: absolute;
+  z-index: 10;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 1rem;
+  background-color: hsla(202, 39%, 60%, 0.88);
   h2 {
     font-size: 2em;
+    font-family: var(--font-audiowide);
     font-weight: 800;
+    color: white;
+
+  }
+  span {
+    font-family: var(--font-orbitron);
+    color: #3f81cd;
+    font-weight: 800;
+    font-size: 26px;
+  }
+  p {
+    font-family: var(--font-orbitron);
+    font-size: 16px;
+
   }
 
 }
@@ -153,14 +222,14 @@ body {
 .basic-bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1; /* Stays at 1 - behind scene */
   background-image: linear-gradient(
     135deg,
     hsl(350, 85%, 55%),
     hsl(355, 64%, 32%)
   );
   filter: blur(150px);
-  transform: scale(1.1); /* prevents edge clipping */
+  transform: scale(1.1);
 }
 @media (min-width: 320px) and (max-width: 425px) {
   
@@ -171,5 +240,14 @@ body {
    
   
   
+  }
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  
+  .container p {
+    font-size: 20px;
+  }
+  .container {
+    width: 400px;
   }
 }

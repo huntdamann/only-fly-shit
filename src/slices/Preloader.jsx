@@ -12,7 +12,7 @@ export function Preloader() {
     return (
         <AnimatePresence mode='wait'>
             <motion.section className={styles.preloaderContainer}>
-                <Image className={styles.logo} src='/heart.svg' width={100} height={100} alt='Preloader Image' />
+                <Image className={styles.logo} src='/logo.PNG' width={100} height={100} alt='Preloader Image' />
             </motion.section>
         </AnimatePresence>
     )
