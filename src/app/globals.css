@@ -51,6 +51,7 @@ body {
   background-color: black;
   p {
     font-family: var(--font-orbitron);
+    width: 300px;
   }
 
 }
