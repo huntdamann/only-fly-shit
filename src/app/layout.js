@@ -31,7 +31,7 @@ const audiowide = Audiowide({
 })
 
 export const metadata = {
-  title: "Moment of Love | Made To Last Forever",
+  title: "Only Fly Shit | Create. Elevate. Progress",
   description: "Handmade Crafts and Goods",
 };
 

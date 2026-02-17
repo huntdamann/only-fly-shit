@@ -66,6 +66,7 @@ export default function Home() {
     if (sectionOneInView) setActiveSection('one')
     else if (cubeSectionInView) setActiveSection('three')
     else if (sectionTwoInView) setActiveSection('two')
+    else setActiveSection(null)
   }, [sectionOneInView, aboutInView, sectionTwoInView])
 
 
@@ -114,11 +115,7 @@ export default function Home() {
 
 
           </ul>
-          <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLScvwus4INP3WYvEDprTmcUoRZDUZyf4ZzPSNLB-Ra2ctR1LKA/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+       
         <Link to="section1" smooth={true} duration={500}>
 
           <button className="generic-button">
@@ -126,7 +123,7 @@ export default function Home() {
           </button>
           </Link>
           
-        </a>
+        
         </div>
       </section>
 

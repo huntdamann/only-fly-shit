@@ -13,6 +13,7 @@ const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial)
 const SCENE_DELAY = 5000
 
 
+
 const MyScene = ({activeSection}) => {
 
   const meshRef = useRef()
