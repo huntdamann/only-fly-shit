@@ -23,18 +23,25 @@ body {
     z-index: 9999;
     position: fixed;
 }
-.hero-section h1 {
 
-  position: absolute;
-  top: 10%;
-  z-index: 5;
-  font-size: 12em;
-  width: 150px;
-  font-family: var(--font-pacifico);
-  color: #3f81cd ;
-  filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
-
-
+.hero-title {
+  background: linear-gradient(
+    90deg,
+    #C0C0C0,   /* silver */
+    #D4AF37,   /* gold */
+    #F5E27A,   /* bright gold */
+    #D4AF37,   /* gold */
+    #C0C0C0    /* silver */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .about-product {
@@ -57,9 +64,9 @@ body {
 }
 .about-product h2 {
   font-size: 2em;
-  font-family: var(--font-audiowide);
+  font-family: var(--font-orbitron);
   width: 310px;
-  color: #3f81cd;
+  color: #D4832A;
   text-align: center;
 }
 
@@ -90,7 +97,7 @@ body {
 
 .hero-cta {
   color: black;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +108,7 @@ body {
   gap: 50px;
 
   li {
-    color: white;
+    color: #A8A8A8;
     font-family: var(--font-orbitron);
     text-transform: uppercase;
   }
@@ -109,6 +116,19 @@ body {
     display: flex;
     gap: 15px;
   }
+  
+}
+.tagline-word {
+  font-family: var(--font-orbitron);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: #C0C0C0; /* silver */
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease 1s;
+}
+.tagline-word:hover {
+  color: #fffdfd;
   
 }
 .header {
@@ -133,21 +153,20 @@ body {
 }
 
 .generic-button {
-  border: 3px #3f81cd solid;
-  transition: all;
+  transition: background-color 0.3s ease;
 
-   width: 150px;
-   border-radius: 15px;
-    padding: 0.5rem;
-    font-family: var(--font-orbitron);
-    color: white;
-    background-color:  hsla(340, 10%, 6%, 0.8) ;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  
+  width: 150px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 0.5rem;
+  font-family: var(--font-orbitron);
+  color: white;
+  background-color: hsla(340, 10%, 6%, 0.8);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
 .generic-button:hover {
-  background-color:  hsla(248, 13%, 65%, 0.8) ;
-  transition: all;
+  background-color: hsla(248, 13%, 65%, 0.8);
 }
 .scene-container {
   position: fixed;
@@ -169,6 +188,8 @@ body {
 }
 .button-custo {
   width: 200px;
+  border: 3px #D4832A solid
+  
 }
 .two {
   justify-content: end;
@@ -185,19 +206,19 @@ body {
   padding: 10px;
   gap: 20px;
   border-radius: 1rem;
-  background-color: hsla(202, 39%, 60%, 0.88);
+  background-color: #8B5E52;
   h2 {
     font-size: 2em;
-    font-family: var(--font-audiowide);
+    font-family: var(--font-orbitron);
     font-weight: 800;
     color: white;
 
   }
   span {
     font-family: var(--font-orbitron);
-    color: #3f81cd;
+    color: #D4832A;
     font-weight: 800;
-    font-size: 26px;
+    font-size: 32px;
   }
   p {
     font-family: var(--font-orbitron);

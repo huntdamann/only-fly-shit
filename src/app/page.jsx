@@ -7,15 +7,18 @@ import Header from "@/slices/Header";
 import Image from 'next/image'
 import AnimatedWord from "@/components/ui/AnimatedWord"
 import { useInView } from "react-intersection-observer";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Preloader } from "@/slices/Preloader";
 import { Link, Element } from 'react-scroll';
+import Tooltip from "@/components/Tooltip";
 
 
 export default function Home() {
 
 
   const [enter, setEnter ] = useState(false)
+  //Container Menu Open Controller
+  const [isOpen, setIsOpen ] = useState(true)
   const [activeSection, setActiveSection] = useState(null)
   // Track current scent index
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,14 +52,14 @@ export default function Home() {
 
 
   const { ref: sectionOneRef, inView: sectionOneInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.75,
   });
   const { ref: aboutRef, inView: aboutInView } = useInView({
     threshold: 0.2,
   });
 
   const { ref: sectionTwoRef, inView: sectionTwoInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.75,
   });
   
   const { ref: cubeRef, inView: cubeSectionInView } = useInView({
@@ -73,30 +76,10 @@ export default function Home() {
   const handleEnter = () => {
     setEnter(true)
   }
+ 
 
   return (
     <>
-      {/* <motion.section initial={{opacity: 1}} animate={{opacity: enter ? 0 : 1}} className="enter-screen">
-       
-        <div className="flex flex-col"> 
-
-         <button onClick={handleEnter} className="generic-button">Enter</button>
-          <AnimatedWord text={"Capture The Moment"} />
-
-        </div>
-
-      </motion.section> */}
-      {/* <header className="header">
-        <ul>
-          <li>Products</li>
-          <li>Products</li>
-          <li>Products</li>
-          <li>Products</li>
-
-          
-        </ul>
-
-      </header> */}
       <Header />
       <main  className="scene-container">
         <Scene
@@ -105,23 +88,33 @@ export default function Home() {
       </main>
 
       <section className="hero-section">
-       <h1> Only Fly Shit </h1>
 
         <div className="hero-cta">
-          <ul>
-            <li>Create</li>
-            <li>Elevate</li>
-            <li>Progress</li>
+        <div className="flex items-center gap-4">
+          <Tooltip text="Create Your Reality">
+            <span className="tagline-word">Create</span>
 
+          </Tooltip>
+          <div className="w-px h-4" style={{ backgroundColor: '#D4AF37' }} />
+          <Tooltip text="Elevate Above Your Situation">
 
-          </ul>
+          <span className="tagline-word">Elevate</span>
+
+          </Tooltip>
+
+          <div className="w-px h-4" style={{ backgroundColor: '#D4AF37' }} />
+          <Tooltip text="Progress forward">
+          <span className="tagline-word">Progress</span>
+
+          </Tooltip>
+        </div>
        
         <Link to="section1" smooth={true} duration={500}>
 
           <button className="generic-button">
             Scroll Down
           </button>
-          </Link>
+        </Link>
           
         
         </div>
@@ -142,31 +135,41 @@ export default function Home() {
 
       <section ref={sectionOneRef} className="section-1">
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="content-container"
-        >
-          <div className="container">
+        <AnimatePresence>
+
+          {isOpen && (
+
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="content-container"
+            >
+            <div className="container">
+            {/* <button onClick={() => setIsOpen(false)}>exit</button> */}
             <div className="flex flex-col gap-5">
-              <h2 className="">Hand-Crafted Candles</h2>
-            </div>
-            <div style={{fontSize: "30px"}} className="w-[200px] h-[200px] flex flex-col items-center justify-center border rounded-md relative ">
-             <span>{currentScent.name}</span>
-            </div>
-            
-            <p className="w-[225px]"> 
-            {currentScent.description}           
-             </p>
+                <h2 className="">Hand-Crafted Candles</h2>
+              </div>
+              <div style={{fontSize: "30px"}} className="w-[200px] h-[200px] flex flex-col items-center justify-center rounded-md relative ">
+              <span>{currentScent.name}</span>
+              </div>
+              
+              <p className="w-[225px]"> 
+              {currentScent.description}           
+              </p>
 
-            <div className="flex gap-4">
-              <button className="generic-button button-custo">Coming Soon</button>
+              <div className="flex gap-4">
+                <button className="generic-button button-custo">Available Soon</button>
+              </div>
             </div>
-           
+            </motion.div>
 
-          </div>
-        </motion.div>
+
+
+          )}
+         
+        </AnimatePresence>
+
       </section>
 
       </Element>
@@ -183,7 +186,7 @@ export default function Home() {
         >
           <div className="container">
             <div className="mb-6">
-              <h2 className="">Glass Albums</h2>
+              <h2 className="">Glass/Vinyl Albums</h2>
             </div>
             
             
@@ -191,13 +194,13 @@ export default function Home() {
                         <li className='flex gap-8'>
                         
                          <p className=' w-[200px]  text-[0.8rem]'>
-                         Customize each glass album with names, dates, and a meaningful phrase tied to the song that defines your special moment.
+                         Customize each album with names, dates, and a meaningful timestamp tied to the song that defines your special moment.
                          </p>
                         </li>
                         <li className='flex gap-8'>
                         
                          <p className=' w-[200px] text-[0.8rem]'>
-                         Choose from Spotify, Apple, or SoundCloud-inspired designs—each with unique layouts and detailing that reflect the platform’s aesthetic.                         </p>
+                         Choose from Spotify, Apple, or SoundCloud-inspired designs— each with unique layouts and detailing that reflect the platform’s aesthetic.                         </p>
                         </li>
                         <li className='flex gap-8'>
                         

@@ -26,10 +26,17 @@ export default function ProductInfo() {
 
                 <div className='p-4'>
                  
-                    <div className='border flex flex-col items-center justify-center text-center'> 
+                    <div className=' flex flex-col gap-3 items-center justify-center text-center'> 
                         <p className='text-white'> <span className='font-extrabold'>Only Fly Shit</span> was built on one belief: create value, no matter the circumstance.
-After being let go and facing everyday frustrations of feeling stuck, founder Hunter Mann made a decision — instead of waiting for the next opportunity, he would create it. By focusing on elevating himself through creating and providing value to others, he turned adversity into direction.
-<span className='font-extrabold'>Only Fly Shit</span> represents a mindset. It’s about creating . Elevating above your situation. And a drive to progress forward.</p>
+                                After being let go and facing the everyday frustrations of feeling stuck, founder Hunter Mann made a decision — instead of waiting for the next opportunity, he would create it. By focusing on elevating himself through creating and providing value for others, he turned adversity into direction.
+                        </p>
+
+                        <p className='text-white'>
+                        <span className='font-extrabold'>Only Fly Shit</span> represents a mindset. It’s about creating . Elevating above your situation. And a drive to progress forward.
+
+                        </p>
+
+
                     </div>
 
 
