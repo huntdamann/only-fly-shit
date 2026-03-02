@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Preloader } from "@/slices/Preloader";
 import { Link, Element } from 'react-scroll';
 import Tooltip from "@/components/Tooltip";
+import Prism from "@/components/ui/Prism";
 
 
 export default function Home() {
@@ -89,7 +90,12 @@ export default function Home() {
 
       <section className="hero-section">
 
+
         <div className="hero-cta">
+
+        <Image src='/logo.PNG' width={300} height={300} alt='Only Fly Shit Alternative Logo' />
+
+
         <div className="flex items-center gap-4">
           <Tooltip text="Create Your Reality">
             <span className="tagline-word">Create</span>
@@ -118,6 +124,17 @@ export default function Home() {
           
         
         </div>
+        {/* <Prism
+          animationType="rotate"
+          timeScale={0.1}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.6}
+          hueShift={0.06}
+          colorFrequency={2.15}
+          noise={0.35}
+          glow={0.9}
+        /> */}
       </section>
 
 
@@ -135,9 +152,6 @@ export default function Home() {
 
       <section ref={sectionOneRef} className="section-1">
 
-        <AnimatePresence>
-
-          {isOpen && (
 
             <motion.div
             initial={{ opacity: 0 }}
@@ -163,12 +177,23 @@ export default function Home() {
               </div>
             </div>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="content-container-2"
+            >
+              <div className="opacity-0">
+                
+                
+            
 
+              
+              
 
-
-          )}
+              </div>
+            </motion.div>
          
-        </AnimatePresence>
 
       </section>
 
@@ -211,8 +236,24 @@ export default function Home() {
            </ul> 
 
             <div className="flex gap-4">
-              <button className="generic-button button-custo">Reserve Yours</button>
+              <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLScvwus4INP3WYvEDprTmcUoRZDUZyf4ZzPSNLB-Ra2ctR1LKA/viewform?usp=dialog" className="generic-button button-custo">Reserve Yours</a>
             </div>
+           
+
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="content-container-2"
+        >
+          <div className="opacity-0">
+            
+            
+         
+
+           
            
 
           </div>

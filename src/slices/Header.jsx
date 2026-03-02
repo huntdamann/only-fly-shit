@@ -17,7 +17,57 @@ export default function Header() {
         <div className="brand-name">
           <h1>Only Fly Shit</h1>
         </div>
+        
+        <ul className="hidden">
+            <li className="">
+            <Link to="section1" smooth={true} duration={500}>
+              <span>About The Brand</span>
+            </Link>
 
+            </li>
+
+            <li className="">
+            <Link to="section2" smooth={true} duration={500}>
+
+              <span>Hand-Crafted Candles</span>
+
+              </Link>
+
+            </li>
+            <li className="">
+            <Link to="section3" smooth={true} duration={500}>
+
+                <span>Glass Albums</span>
+              </Link>
+
+            </li>
+           
+      </ul>
+      <ul id='desktop-nav' className="">
+            <li className="">
+            <Link to="section1" smooth={true} duration={500}>
+              <span className='desktop-link'>About The Brand</span>
+            </Link>
+
+            </li>
+
+            <li className="">
+            <Link to="section2" smooth={true} duration={500}>
+
+              <span className='desktop-link'>Hand-Crafted Candles</span>
+
+              </Link>
+
+            </li>
+            <li className="">
+            <Link to="section3" smooth={true} duration={500}>
+
+                <span className='desktop-link'>Glass Albums</span>
+              </Link>
+
+            </li>
+           
+      </ul>
         {/* Menu Button */}
         <button className="menu-button" onClick={toggleMenu}>
           {/* Top line - rotates down to form top of X */}
@@ -40,6 +90,7 @@ export default function Header() {
         </button>
       </div>
 
+    
       {/* Dropdown Navigation */}
       {isMenuOpen && (
         <nav className="dropdown-nav">

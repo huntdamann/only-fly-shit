@@ -46,11 +46,11 @@ export default function ProductInfo() {
 
             </div>
 
-            <div className=''>
+            {/* <div className=''>
                 <Image src='/logo.PNG' width={300} height={300} alt='Only Fly Shit Alternative Logo' />
 
                
-            </div>
+            </div> */}
 
 
 

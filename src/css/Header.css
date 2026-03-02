@@ -1,11 +1,15 @@
 .header-wrapper {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
+    height: auto;
     padding: 1.5rem 2rem;
-    background-color: #D4AF37;
+    background: rgba(206, 169, 22, 0.448);       /* very transparent gold tint */
+  backdrop-filter: blur(12px) saturate(180%); /* the glass blur magic */
+  -webkit-backdrop-filter: blur(12px) saturate(180%); /* Safari support */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
   
   .header-content {
@@ -55,6 +59,20 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
+#desktop-nav {
+  display: none;
+  gap: 20px;
+  font-family: var(--font-orbitron);
+  color: white;
+  cursor: pointer;
+  
+
+}
+.desktop-link:hover {
+    color: rgb(141, 138, 129);       /* very transparent gold tint */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
 .nav-list {
   list-style: none;
@@ -87,4 +105,24 @@
 /* Make sure header-wrapper has position relative */
 .header-wrapper {
   position: relative;
+}
+@media (min-width: 1024px) {
+  .menu-button {
+    display: none;
+    
+  }
+  .header-content {
+    display: flex;
+   
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  #desktop-nav {
+  
+    display: flex;
+  }
+  
+  
+  
+
 }

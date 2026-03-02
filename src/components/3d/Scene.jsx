@@ -1,5 +1,5 @@
 "use client"
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useSpring, animated, useScroll } from '@react-spring/three'
 import { MeshDistortMaterial, Text, useGLTF, Float, Environment, PerformanceMonitor } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -13,18 +13,37 @@ const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial)
 const SCENE_DELAY = 5000
 
 
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768)
+
+  useEffect(() => {
+    const handler = () => setIsDesktop(window.innerWidth >= 768)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+
+  return isDesktop
+}
 
 const MyScene = ({activeSection}) => {
 
   const meshRef = useRef()
+  const isDesktop = useIsDesktop()
+
+  const { position } = useSpring({
+    position: isDesktop ? (activeSection ? [0.8,0,0 ] : [2,0,0]) : [0, 0, 0] ,
+    config: { mass: 1, tension: 170, friction: 26 }, // spring feel
+  })
 
   return (
     
  
     <>
-      {activeSection === 'two' && <ModelAlbum />}
-      {activeSection === 'one' && <ModelCandle />}
-      {activeSection === 'three' && <ModelCube/>}
+       <animated.group position={position}>
+        {activeSection === 'two' && <ModelAlbum />}
+        {activeSection === 'one' && <ModelCandle />}
+        {activeSection === 'three' && <ModelCube />}
+      </animated.group>
 
       
     </>
