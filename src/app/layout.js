@@ -40,7 +40,7 @@ const audiowide = Audiowide({
 
 export const metadata = {
   title: "Only Fly Shit | Create. Elevate. Progress",
-  description: "Handmade Crafts and Goods",
+  description: "Curated Crafts and Goods for those who like to feel a connection with and experience the things they purchase",
 };
 
 export default function RootLayout({ children }) {
