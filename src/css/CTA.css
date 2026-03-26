@@ -1,0 +1,67 @@
+.section-content {
+    height: auto;
+    min-height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(16, 16, 16);
+    padding: 1.5rem;
+    color: #000000;
+
+    
+  }
+  
+  .who-we-are {
+    position: absolute;
+    font-family: "Orbitron", sans-serif;
+    right: 80px;
+    top: 80px;
+  }
+
+.cta-heading {
+    font-family: var(--font-orbitron);
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    width: 300px;
+}
+.signup-container {
+  padding: 3rem;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.signup-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-descript {
+  width: 300px;
+}
+
+#name, #email, #phone { 
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  border: 1px #d1a054 solid;
+}
+
+@media (min-width: 1024px) {
+  .signup-container {
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+}

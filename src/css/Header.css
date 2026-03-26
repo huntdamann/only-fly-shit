@@ -1,5 +1,5 @@
 .header-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,9 +25,16 @@
     font-weight: 700;
     color: white;
     margin: 0;
-    font-family: var(--font-pacifico);
+    font-family: var(--font-orbitron);
   }
-  
+  .brand-name {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
   .menu-button {
     display: flex;
     flex-direction: column;

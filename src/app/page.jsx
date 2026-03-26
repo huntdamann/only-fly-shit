@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Scene from "@/components/3d/Scene";
 import ProductInfo from "@/slices/ProductInfo";
+import MarketFeatures from '../slices/MarketFeatures'
 import Preorder from "@/components/ui/Preorder";
 import Header from "@/slices/Header";
+import NewsletterCTA from '../slices/NewsletterCTA'
 import Image from 'next/image'
 import AnimatedWord from "@/components/ui/AnimatedWord"
 import { useInView } from "react-intersection-observer";
@@ -12,7 +14,9 @@ import { Preloader } from "@/slices/Preloader";
 import { Link, Element } from 'react-scroll';
 import Tooltip from "@/components/Tooltip";
 import Prism from "@/components/ui/Prism";
-
+import { StockTicker } from "@/components/ui/Marquee";
+import Products from "@/slices/Products";
+import Viewer from '../providers/Viewer'
 
 export default function Home() {
 
@@ -39,16 +43,7 @@ export default function Home() {
     },
    
   ];
-  // Auto-cycle every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % scents.length);
-    }, 10000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [scents.length]);
-
-  const currentScent = scents[currentIndex];
 
 
 
@@ -66,12 +61,7 @@ export default function Home() {
   const { ref: cubeRef, inView: cubeSectionInView } = useInView({
     threshold: 0.5,
   });
-  useEffect(() => {
-    if (sectionOneInView) setActiveSection('one')
-    else if (cubeSectionInView) setActiveSection('three')
-    else if (sectionTwoInView) setActiveSection('two')
-    else setActiveSection(null)
-  }, [sectionOneInView, aboutInView, sectionTwoInView])
+  
 
 
   const handleEnter = () => {
@@ -81,63 +71,68 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <main  className="scene-container">
+      {/* <main  className="scene-container">
         <Scene
           active={activeSection}
         />
-      </main>
+      </main> */}
 
       <section className="hero-section">
 
 
         <div className="hero-cta">
 
-        <Image src='/logo.PNG' width={300} height={300} alt='Only Fly Shit Alternative Logo' />
-
-
-        <div className="flex items-center gap-4">
+        {/* SubHeading */}
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}} className="flex items-center gap-4">
           <Tooltip text="Create Your Reality">
             <span className="tagline-word">Create</span>
-
           </Tooltip>
           <div className="w-px h-4" style={{ backgroundColor: '#D4AF37' }} />
           <Tooltip text="Elevate Above Your Situation">
-
-          <span className="tagline-word">Elevate</span>
-
+            <span className="tagline-word">Elevate</span>
           </Tooltip>
-
           <div className="w-px h-4" style={{ backgroundColor: '#D4AF37' }} />
           <Tooltip text="Progress forward">
-          <span className="tagline-word">Progress</span>
-
+            <span className="tagline-word">Progress</span>
           </Tooltip>
-        </div>
-       
-        <Link to="section1" smooth={true} duration={500}>
+        </motion.div>
 
-          <button className="generic-button">
-            Scroll Down
-          </button>
-        </Link>
+        <div className="gap-1 flex flex-col justify-start items-start">
+
+        <motion.div initial={{y: -60, opacity: 0}} animate={{y: 0, opacity: 1}}>
+           <Image className="" src="/only.png" width={220} height={200} alt="Only Word" />
+
+        </motion.div>
+          <motion.h1 initial={{x: -200, opacity: 0}} animate={{x: 0, opacity: 1}} className="hero-main">Fly</motion.h1>
+
+          <motion.div initial={{y: 60, opacity: 0}} animate={{y: 0, opacity: 1}}>
+            <Image className="" src="/shit_pic.png" width={200} height={200} alt="Shit Word" />
+          </motion.div>
+        </div>
+
+        <motion.p initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}} className="text-white lg:w-[350px]">
+          Curated products made for the ones who want to experience the things you purchase and some text that adds space for this too look full.
+        </motion.p>
+
+        <motion.div initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} transition={{delay: 0.9}} className="hero-button">
+          <Link to="section1" smooth={true} duration={500}>
+            <button className="golden-button">Shop Now</button>
+          </Link>
+          <button className="generic-button">The Story</button>
+        </motion.div>
+       
           
         
         </div>
-        {/* <Prism
-          animationType="rotate"
-          timeScale={0.1}
-          height={3.5}
-          baseWidth={5.5}
-          scale={3.6}
-          hueShift={0.06}
-          colorFrequency={2.15}
-          noise={0.35}
-          glow={0.9}
-        /> */}
+        <div className="d-showcase">
+
+          <Viewer modelSelect="candle" />
+        </div>
+       
       </section>
 
 
+      <StockTicker />
       <Element name="section1">
 
       <section ref={aboutRef} className="about-product">
@@ -146,7 +141,10 @@ export default function Home() {
       
       </section>
       </Element>
-
+      <Products />
+      <NewsletterCTA />
+      <MarketFeatures />
+{/* 
       <Element name="section2">
 
 
@@ -160,7 +158,6 @@ export default function Home() {
             className="content-container"
             >
             <div className="container">
-            {/* <button onClick={() => setIsOpen(false)}>exit</button> */}
             <div className="flex flex-col gap-5">
                 <h2 className="">Hand-Crafted Candles</h2>
               </div>
@@ -197,9 +194,10 @@ export default function Home() {
 
       </section>
 
-      </Element>
+      </Element> */}
 
-      <Element name="section3">
+
+      {/* <Element name="section3">
 
       <section ref={sectionTwoRef} className="section-2">
 
@@ -259,7 +257,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-      </Element>
+      </Element> */}
 
       {/* <section ref={cubeRef} className="section-3">
 

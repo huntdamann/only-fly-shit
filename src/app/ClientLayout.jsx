@@ -11,13 +11,13 @@ export default function ClientLayout({ children }) {
     // Simulate initial page load
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 8000) // adjust timing or remove if needed
+    }, 1000) // adjust timing or remove if needed
 
     return () => clearTimeout(timer)
   }, [])
 
   if (loading) {
-    return <Preloader />
+    // return <Preloader />
   }
 
   return (

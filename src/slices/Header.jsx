@@ -1,6 +1,9 @@
+"use client"
 import React, { useState } from 'react';
 import '../css/Header.css'
+import { motion } from 'motion/react';
 import { Link, Element } from 'react-scroll';
+import Image from 'next/image'
 
 
 export default function Header() {
@@ -11,12 +14,14 @@ export default function Header() {
   };
 
   return (
-    <header style={{backgroundColor: isMenuOpen ? "black" : "", transition: "all 0.3s ease"}} className="header-wrapper">
+    <motion.header initial={{opacity: 0, y: -50}} animate={{opacity: 1, y:0}} transition={{delay: 0.9}} 
+    style={{backgroundColor: isMenuOpen ? "black" : "", transition: "all 0.3s ease"}} 
+    className="header-wrapper">
       <div className="header-content">
         {/* Brand Name */}
-        <div className="brand-name">
-          <h1>Only Fly Shit</h1>
-        </div>
+        <a href="/" className="brand-name">
+          <Image src="/logo.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
+        </a>
         
         <ul className="hidden">
             <li className="">
@@ -44,14 +49,14 @@ export default function Header() {
            
       </ul>
       <ul id='desktop-nav' className="">
-            <li className="">
+            <li className="cursor-pointer">
             <Link to="section1" smooth={true} duration={500}>
               <span className='desktop-link'>About The Brand</span>
             </Link>
 
             </li>
 
-            <li className="">
+            <li className="cursor-pointer">
             <Link to="section2" smooth={true} duration={500}>
 
               <span className='desktop-link'>Hand-Crafted Candles</span>
@@ -59,7 +64,7 @@ export default function Header() {
               </Link>
 
             </li>
-            <li className="">
+            <li className="cursor-pointer">
             <Link to="section3" smooth={true} duration={500}>
 
                 <span className='desktop-link'>Glass Albums</span>
@@ -121,6 +126,6 @@ export default function Header() {
           </ul>
         </nav>
       )}
-    </header>
+    </motion.header>
   );
 }

@@ -1,0 +1,31 @@
+.productHeading {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    background-color: rgb(14, 14, 14);
+    gap: 2.5rem;
+    height: 100%;
+  }
+  .productTitle {
+    font-size: 3em;
+    font-family: var(--font-orbitron);
+  }
+  .productDescription {
+    width: 21rem;
+    margin-right: 0.5rem;
+    font-family: var(--font-inter);
+    color: rgb(159, 158, 158);
+    padding-left: 1.5rem;
+
+  }
+  
+  @media (min-width: 1024px) {
+    .productHeading {
+      flex-direction: row;
+    }
+  }
+  
+  
+  

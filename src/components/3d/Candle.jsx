@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 export default function ModelCandle(props) {
   const { nodes, materials } = useGLTF('/onlyflyshit.glb')
   return (
-    <group position={[0, 0.5, 0]}  {...props} scale={[0.3, 0.3, 0.3]} rotation={[0, 9, 0]}  dispose={null}>
+    <group position={[0, 0.5, 0]}  {...props} scale={[0.5, 0.5, 0.5]} rotation={[0, 9, 0]}  dispose={null}>
       <group scale={[0.756, 0.424, 0.756]}>
         <mesh
           castShadow
