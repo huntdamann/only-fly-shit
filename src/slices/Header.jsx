@@ -19,9 +19,9 @@ export default function Header() {
     className="header-wrapper">
       <div className="header-content">
         {/* Brand Name */}
-        <a href="/" className="brand-name">
+        <Link href="/" className="brand-name">
           <Image src="/logo.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
-        </a>
+        </Link>
         
         <ul className="hidden">
             <li className="">

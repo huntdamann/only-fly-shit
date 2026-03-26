@@ -1,8 +1,6 @@
 import React from 'react'
 import { motion } from 'motion/react'
-import Image from 'next/image'
 import "../css/Products.css"
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FaArrowRight } from 'react-icons/fa'
 import Viewer  from '../providers/Viewer'
 

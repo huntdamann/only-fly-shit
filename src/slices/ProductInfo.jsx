@@ -49,7 +49,7 @@ export default function ProductInfo() {
 
                 </div>
                 <div id='sig' className='border-t-2 border-gray-500 flex items-center gap-3 mt-24'>
-                    <div className='w-[50px] h-[50px] relative overflow-hidden block border rounded-[100%] '>
+                    <div className='w-12.5 h-12.5 relative overflow-hidden block border rounded-[100%] '>
                          <Image src="/logo.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
 
                     </div>

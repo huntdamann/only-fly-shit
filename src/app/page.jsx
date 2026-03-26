@@ -110,7 +110,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <motion.p initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}} className="text-white lg:w-[350px]">
+        <motion.p initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}} className="text-white lg:w-87.5">
           Curated products made for the ones who want to experience the things you purchase and some text that adds space for this too look full.
         </motion.p>
 
