@@ -11,6 +11,10 @@
 
 .name {
     font-family: var(--font-orbitron);
+    color: white;
+}
+.role {
+    color: rgb(103, 102, 102);
 }
 
 #sig {

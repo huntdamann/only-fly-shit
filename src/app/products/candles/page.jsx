@@ -16,14 +16,14 @@ export const metadata = {
             {/* Product Name and Description */}
             <div className='p-3 flex flex-col gap-2 '>
 
-                <h1 className={styles.productTitle}> Glass Photo Albums </h1>
+                <h1 className={styles.productTitle}> Hand-Crafted Candles </h1>
 
                 <p className={styles.productDescription}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis laudantium eius blanditiis possimus neque ut totam. Qui hic quas aspernatur molestiae minima alias</p>
             </div>
 
             {/* 3D Scene */}
             <div className=' h-[300px] lg:absolute lg:right-0 lg:w-[400px] flex flex-col items-center justify-center'>
-                <Viewer modelSelect='album' />
+                <Viewer modelSelect='candle' />
             </div>
         </div>
         <div className='h-[80vh]'>

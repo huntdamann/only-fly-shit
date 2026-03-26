@@ -4,6 +4,7 @@ import '../css/Header.css'
 import { motion } from 'motion/react';
 import { Link, Element } from 'react-scroll';
 import Image from 'next/image'
+import { CiSearch, CiShoppingCart } from "react-icons/ci";
 
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
       <div className="header-content">
         {/* Brand Name */}
         <Link href="/" className="brand-name">
-          <Image src="/shit_pic.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
+          <Image src="/official_logo.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
         </Link>
         
         <ul className="hidden">
@@ -73,26 +74,36 @@ export default function Header() {
             </li>
            
       </ul>
-        {/* Menu Button */}
-        <button className="menu-button" onClick={toggleMenu}>
-          {/* Top line - rotates down to form top of X */}
-          <span style={{
-            transform: isMenuOpen ? "rotate(45deg) translateY(8px) translateX(5px)" : "rotate(0deg)",
-            transition: "transform 0.3s ease"
-          }} className="menu-line"/>
 
-          {/* Middle line - fades out */}
-          <span style={{
-            opacity: isMenuOpen ? "0" : "1",
-            transition: "opacity 0.3s ease"
-          }} className="menu-line"/>
 
-          {/* Bottom line - rotates up to form bottom of X */}
-          <span style={{
-            transform: isMenuOpen ? "rotate(-45deg) translateY(-8px) translateX(5px)" : "rotate(0deg)",
-            transition: "transform 0.3s ease"
-          }} className="menu-line"/>
-        </button>
+      <div className="flex items-center gap-3">
+          <div className=' flex text-white gap-2 ml-20'>
+            <CiSearch className='cursor-pointer' size={28} />
+            <CiShoppingCart className='cursor-pointer' size={28} />
+          </div>
+            {/* Menu Button */}
+            <button className="menu-button" onClick={toggleMenu}>
+              {/* Top line - rotates down to form top of X */}
+              <span style={{
+                transform: isMenuOpen ? "rotate(45deg) translateY(8px) translateX(5px)" : "rotate(0deg)",
+                transition: "transform 0.3s ease"
+              }} className="menu-line"/>
+
+              {/* Middle line - fades out */}
+              <span style={{
+                opacity: isMenuOpen ? "0" : "1",
+                transition: "opacity 0.3s ease"
+              }} className="menu-line"/>
+
+              {/* Bottom line - rotates up to form bottom of X */}
+              <span style={{
+                transform: isMenuOpen ? "rotate(-45deg) translateY(-8px) translateX(5px)" : "rotate(0deg)",
+                transition: "transform 0.3s ease"
+              }} className="menu-line"/>
+            </button>
+      </div>
+      
+     
       </div>
 
     

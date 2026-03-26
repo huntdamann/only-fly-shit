@@ -21,10 +21,14 @@
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.2em;
+    font-size: 1.4em;
     font-weight: 900;
     min-width: 170px;
     z-index: 20;
+    text-align: center;
+}
+.adjust {
+  bottom: 0.7rem;
 }
 
 .product-section {
@@ -32,6 +36,7 @@
     flex-direction: column;
     gap: 30px;
     align-self: center;
+    margin-top: 2rem;
 }
 .section-title {
     font-size: 2.5em;
