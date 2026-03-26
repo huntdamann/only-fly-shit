@@ -26,6 +26,7 @@ body {
   cursor: pointer;
   color: white;
   background-color: black;
+  font-family: var(--font-orbitron);
   gap: 4px;
 
   p {
