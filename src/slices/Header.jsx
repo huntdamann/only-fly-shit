@@ -20,7 +20,7 @@ export default function Header() {
       <div className="header-content">
         {/* Brand Name */}
         <Link href="/" className="brand-name">
-          <Image src="/logo.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
+          <Image src="/shit_pic.png" fill alt="Brand logo" style={{ objectFit: 'cover' }} />
         </Link>
         
         <ul className="hidden">
