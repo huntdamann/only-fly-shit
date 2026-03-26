@@ -111,7 +111,7 @@ export default function Home() {
         </div>
 
         <motion.p initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}} className="text-white lg:w-87.5">
-          Curated products made for the ones who want to experience the things you purchase and some text that adds space for this too look full.
+          Curated items made for the ones who like to experience and connect with the things that you purchase.
         </motion.p>
 
         <motion.div initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}} transition={{delay: 0.9}} className="hero-button">
