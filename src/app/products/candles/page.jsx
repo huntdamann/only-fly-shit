@@ -5,7 +5,7 @@ import { CiGrid41, CiGrid2H } from "react-icons/ci";
 
 
 export const metadata = {
-    title: "Glass Photo Album",
+    title: "Hand-Crafted Candles",
     description: "Get in touch with us",
   };
   
@@ -18,7 +18,7 @@ export const metadata = {
 
                 <h1 className={styles.productTitle}> Hand-Crafted Candles </h1>
 
-                <p className={styles.productDescription}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis laudantium eius blanditiis possimus neque ut totam. Qui hic quas aspernatur molestiae minima alias</p>
+                <p className={styles.productDescription}>Every candle starts with intention. Each scent is blended to do more than just smell good, it&apos;s made to shift the energy in the room, change how you feel, and turn your space into something different than what it was five minutes ago. Light one when you need to create. Light one when you need to let go. Light one just to remind yourself that your environment is yours to shape.</p>
             </div>
 
             {/* 3D Scene */}

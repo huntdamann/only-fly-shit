@@ -333,6 +333,9 @@ body {
   
   
   }
+  .hero-section {
+    padding-top: 3rem;
+  }
   .hero-cta {
     align-self: center;
   margin-top: 30px;

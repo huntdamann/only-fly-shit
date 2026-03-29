@@ -18,7 +18,7 @@ export const metadata = {
 
                 <h1 className={styles.productTitle}> Glass Photo Albums </h1>
 
-                <p className={styles.productDescription}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis laudantium eius blanditiis possimus neque ut totam. Qui hic quas aspernatur molestiae minima alias</p>
+                <p className={styles.productDescription}>Handmade glass photo albums built for music lovers. Choose from three designs inspired by SoundCloud, Apple Music, and Spotify — the platforms that define the soundtrack to your life. Every album is made by hand, so what you get is genuinely one of a kind.</p>
             </div>
 
             {/* 3D Scene */}
