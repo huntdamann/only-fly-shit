@@ -10,6 +10,9 @@ body {
   background-color: black;
 }
 
+body, html {
+  overflow-x: hidden;
+}
 
 .hero-main {
   color: #D4AF37;
