@@ -6,12 +6,13 @@
   box-sizing: border-box;
 }
 body {
-  position: relative;
   background-color: black;
 }
 
 body, html {
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
+
 }
 
 .hero-main {
@@ -337,7 +338,7 @@ body, html {
   
   }
   .hero-section {
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
   .hero-cta {
     align-self: center;
